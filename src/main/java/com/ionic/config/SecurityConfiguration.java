@@ -40,6 +40,8 @@ public class SecurityConfiguration extends ResourceServerConfigurerAdapter {
         http
             .csrf()
             .ignoringAntMatchers("/h2-console/**")
+            .ignoringAntMatchers("/tlabatac/**")
+            .ignoringAntMatchers("/auth/**")
             .csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())
         .and()
             .addFilterBefore(corsFilter, CsrfFilter.class)
