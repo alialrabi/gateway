@@ -28,9 +28,9 @@ import org.springframework.web.client.RestTemplate;
 public class SecurityConfiguration extends ResourceServerConfigurerAdapter {
     private final OAuth2Properties oAuth2Properties;
 
-    private final CorsFilter corsFilter;
+    private final CORSFilter corsFilter;
 
-    public SecurityConfiguration(OAuth2Properties oAuth2Properties, CorsFilter corsFilter) {
+    public SecurityConfiguration(OAuth2Properties oAuth2Properties, CORSFilter corsFilter) {
         this.oAuth2Properties = oAuth2Properties;
         this.corsFilter = corsFilter;
     }
