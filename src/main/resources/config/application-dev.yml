@@ -43,9 +43,9 @@ spring:
             indent-output: true
     datasource:
         type: com.zaxxer.hikari.HikariDataSource
-        url: jdbc:postgresql://skywriter-demo.c5tuhe32yrwr.us-west-1.rds.amazonaws.com:5432/tlabatac?usessl=false
-        username: skywriter_dba
-        password: Oh2DIIfcQ1rQMS
+        url: jdbc:postgresql://localhost:5433/tlabatac
+        username: postgres
+        password: root
         hikari:
             auto-commit: false
     jpa:
@@ -64,6 +64,7 @@ spring:
             hibernate.cache.hazelcast.use_lite_member: true
     liquibase:
         contexts: dev
+
     mail:
         host: localhost
         port: 25
@@ -85,6 +86,23 @@ spring:
 
 server:
     port: 6061
+    
+zuul: # those values must be configured depending on the application specific needs
+    host:
+        connect-timeout-millis: 100000
+        socket-timeout-millis: 600000
+        max-total-connections: 100000
+        max-per-route-connections: 10000
+    semaphore:
+        max-semaphores: 5000
+hystrix:
+    command:
+        default:
+            execution:
+                isolation:
+                    thread:
+                        timeoutInMilliseconds: 600000    	
+            
 
 # ===================================================================
 # JHipster specific properties
