@@ -56,6 +56,8 @@ public class SecurityConfiguration extends ResourceServerConfigurerAdapter {
             .authorizeRequests()
             .antMatchers("/uaa/api/register").permitAll()
             .antMatchers("/api/register").permitAll()
+            .antMatchers("/uaa/api/users/forgetPassword").permitAll()
+            .antMatchers("/api/users/forgetPassword").permitAll()
             .antMatchers("/api/**").authenticated()
             .antMatchers("/management/health").permitAll()
             .antMatchers("/management/info").permitAll()
