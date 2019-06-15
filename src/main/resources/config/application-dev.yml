@@ -43,9 +43,9 @@ spring:
             indent-output: true
     datasource:
         type: com.zaxxer.hikari.HikariDataSource
-        url: jdbc:postgresql://skywriter-dev.c5tuhe32yrwr.us-west-1.rds.amazonaws.com:5432/tlabatac?usessl=false
-        username: postgres
-        password: postgres
+        url: jdbc:postgresql://tlabatac.cspppmizcbuw.us-west-1.rds.amazonaws.com:5432/tlabatac?usessl=false
+        username: tlb
+        password: Alialrabi_2019
         hikari:
             auto-commit: false
     jpa:
